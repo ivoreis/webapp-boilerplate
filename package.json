@@ -5,22 +5,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "engines": {
     "node": "12.18.1"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.3",
+    "jest-emotion": "^10.0.32",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-test-renderer": "^16.13.1",
     "rosetta": "^1.0.1",
     "use-effect-reducer": "^0.6.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.14",
     "@types/react": "^16.9.41",
+    "@types/react-test-renderer": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^7.3.1",
@@ -31,6 +37,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.5"
   }

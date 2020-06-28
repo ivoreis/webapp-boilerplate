@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with correct styles 1`] = `
+.emotion-0 nav {
+  text-align: center;
+}
+
+.emotion-0 ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-0 nav > ul {
+  padding: 4px 16px;
+}
+
+.emotion-0 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 8px;
+}
+
+.emotion-0 a {
+  color: #067df7;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+<nav
+  className="emotion-0"
+>
+  <ul>
+    <li>
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://zeit.co/now"
+      >
+        ZEIT
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://github.com/zeit/next.js"
+      >
+        GitHub
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
