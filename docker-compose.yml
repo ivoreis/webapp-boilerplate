@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  web:
+    environment:
+      - EXAMPLE_URL=http://localhost:4000
+    build:
+      context: .

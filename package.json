@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "docker:build": "docker-compose build --build-arg GITHUB_TOKEN=$GITHUB_TOKEN web",
+    "docker:start": "docker-compose run --publish 3000:3000 web"
   },
   "engines": {
     "node": "12.18.1"
