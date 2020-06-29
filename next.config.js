@@ -1,11 +1,7 @@
 const path = require('path')
 
 const webpackConfig = (config, options) => {
-  const {
-    dev,
-    isServer,
-    defaultLoaders
-  } = options
+  const { dev, isServer, defaultLoaders } = options
   const newConfig = {
     ...config,
   }
@@ -25,4 +21,7 @@ const webpackConfig = (config, options) => {
 module.exports = {
   poweredByHeader: false,
   webpack: webpackConfig,
+  experimental: {
+    trailingSlash: false,
+  },
 }
