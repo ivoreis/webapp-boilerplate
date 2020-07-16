@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => ({
   props: {
     ...(await getLanguageProps(context)),
     // Get user info from cookie (session / jwt token), if needed call internal apis
-    initialState: { profile: { name: 'John' } },
+    initialState: { profile: { name: 'Guest' } },
   },
 })
 

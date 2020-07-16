@@ -14,6 +14,7 @@ exports[`renders with correct styles 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 0 32px;
 }
 
 .emotion-0 nav > ul {
@@ -29,7 +30,7 @@ exports[`renders with correct styles 1`] = `
 }
 
 .emotion-0 a {
-  color: #067df7;
+  color: #0756a7;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 13px;

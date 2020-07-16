@@ -18,6 +18,7 @@ const styles = css`
   ul {
     display: flex;
     justify-content: space-between;
+    padding: 0 32px;
   }
   nav > ul {
     padding: 4px 16px;
@@ -27,7 +28,7 @@ const styles = css`
     padding: 6px 8px;
   }
   a {
-    color: #067df7;
+    color: #0756a7;
     text-decoration: none;
     font-size: 13px;
   }
