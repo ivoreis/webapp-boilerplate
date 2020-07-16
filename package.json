@@ -37,7 +37,7 @@
     "@types/react": "^16.9.43",
     "@types/react-test-renderer": "^16.9.2",
     "@types/user-agents": "^1.0.0",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^7.3.1",
     "eslint-config-airbnb-typescript": "^8.0.2",
