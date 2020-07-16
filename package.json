@@ -30,7 +30,7 @@
     "user-agents": "^1.0.559"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14",
+    "@types/node": "^14.0.23",
     "@types/puppeteer": "^3.0.1",
     "@types/react": "^16.9.41",
     "@types/react-test-renderer": "^16.9.2",
