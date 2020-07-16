@@ -19,7 +19,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     }
   },
   "exclude": [
@@ -33,6 +35,6 @@
     "prettier.config.js",
     ".eslintrc.js",
     "jest.config.js",
-    "setupTests.ts",
+    "setupTests.ts"
   ]
 }
