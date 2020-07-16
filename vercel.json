@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "target": "serverless",
   "env": {
     "RUNTIME_PUBLIC_VAR": "runtime-public-var"
   },
