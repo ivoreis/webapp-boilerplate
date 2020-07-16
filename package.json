@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "jest",
     "type-check": "tsc --noEmit",
+    "vercel": "vercel",
     "docker:build": "docker-compose build --build-arg GITHUB_TOKEN=$GITHUB_TOKEN web",
     "docker:start": "docker-compose run --publish 3000:3000 web"
   },
@@ -48,6 +49,7 @@
     "jest": "^26.1.0",
     "node-fetch": "^2.6.0",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "vercel": "^19.1.2"
   }
 }
