@@ -27,7 +27,6 @@ class MyDocument extends Document {
           />
           <meta name="description" content="webapp boilerplate" />
           <meta name="keywords" content="pwd,nextjs,reactjs,emotion" />
-          <title>WebApp</title>
 
           <link rel="manifest" href="/manifest.json" />
           <link
