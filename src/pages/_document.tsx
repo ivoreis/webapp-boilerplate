@@ -25,9 +25,9 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <meta name="description" content="next-boilerplate app" />
+          <meta name="description" content="webapp boilerplate" />
           <meta name="keywords" content="pwd,nextjs,reactjs,emotion" />
-          <title>Next.js boilerplate</title>
+          <title>WebApp</title>
 
           <link rel="manifest" href="/manifest.json" />
           <link
@@ -52,8 +52,9 @@ class MyDocument extends Document {
             styles={css`
               body {
                 margin: 0;
-                font-family: -apple-system, BlinkMacSystemFont, Avenir Next,
-                  Avenir, Helvetica, sans-serif;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+                  'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
               }
             `}
           />

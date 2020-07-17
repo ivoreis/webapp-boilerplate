@@ -1,6 +1,6 @@
 {
-  "name": "next-boilerplate",
-  "short_name": "next-boilerplate",
+  "name": "webapp-boilerplate",
+  "short_name": "webapp-boilerplate",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",

@@ -1,6 +1,6 @@
 # React boilerplate app
 
-You can find the app running here in [next-boilerplate](https://next-boilerplate-delta.vercel.app/)
+You can find the app running here in [webapp-boilerplate](https://next-boilerplate-delta.vercel.app/)
 
 Example NextJS app containing:
 
