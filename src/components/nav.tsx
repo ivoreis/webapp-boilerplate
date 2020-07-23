@@ -4,8 +4,8 @@ import { FunctionComponent } from 'react'
 import Link from 'next/link'
 
 const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
+  { href: '/', label: 'Home' },
+  { href: '/example', label: 'Example' },
 ].map((link) => ({
   ...link,
   key: `nav-link-${link.href}-${link.label}`,
@@ -38,14 +38,11 @@ const Nav: FunctionComponent = () => {
   return (
     <nav css={styles}>
       <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
         {links.map(({ key, href, label }) => (
           <li key={key}>
-            <a href={href}>{label}</a>
+            <Link href={href} shallow={false}>
+              <a>{label}</a>
+            </Link>
           </li>
         ))}
       </ul>
