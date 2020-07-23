@@ -25,3 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .vercel
+.serverless*
+/public/sw.js
