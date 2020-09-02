@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
-    "next": "9.4.4",
+    "next": "9.5.3",
     "next-pwa": "^3.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
