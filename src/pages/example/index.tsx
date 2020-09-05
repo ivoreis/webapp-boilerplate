@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { NextPage } from 'next'
+import useStateManager from '~/hooks/stateManager/useStateManager'
 
 import Page from '~/layouts/page'
 
 const Example: NextPage = () => {
-  return <Page title="Example">Yo!!!</Page>
+  const { state } = useStateManager()
+
+  return <Page title="Example">Yo!!! ${state.count}</Page>
 }
 
 export default Example

@@ -6,7 +6,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document'
-import { Global, css } from '@emotion/core'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -21,13 +20,8 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
           <meta name="description" content="webapp boilerplate" />
           <meta name="keywords" content="pwd,nextjs,reactjs,emotion" />
-
           <link rel="manifest" href="/manifest.json" />
           <link
             href="/images/icons/icon-72x72.png"
@@ -47,16 +41,6 @@ class MyDocument extends Document {
             href="/images/icons/icon-192x192.png"
           />
           <meta name="theme-color" content="#317EFB" />
-          <Global
-            styles={css`
-              body {
-                margin: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-                  'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-              }
-            `}
-          />
         </Head>
         <body>
           <Main />

@@ -1,13 +1,12 @@
 import React, { createContext, FunctionComponent } from 'react'
 import { useEffectReducer, EffectReducerExec } from 'use-effect-reducer'
-import { PublicConfig } from '~/config/client'
 
 export interface StateManagerState {
   count: number
   profile: {
     name: string
   }
-  config: PublicConfig
+  config: Record<string, string>
 }
 
 export type StateManagerReducerEventType = 'INC'

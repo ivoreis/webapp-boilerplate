@@ -17,15 +17,21 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
-    "next": "9.4.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.5.3",
     "next-pwa": "^3.0.3",
-    "react": "16.13.1",
+    "react": "^16.13.1",
     "react-dom": "16.13.1",
     "react-test-renderer": "^16.13.1",
     "rosetta": "^1.1.0",
-    "use-effect-reducer": "^0.6.1"
+    "use-effect-reducer": "^0.6.1",
+    "tailwindcss": "^1.8.2",
+    "clsx": "^1.1.1"
   },
   "devDependencies": {
+    "postcss-cli": "7.1.2",
+    "postcss-import": "^12.0.1",
+    "autoprefixer": "^9.8.6",
     "jest-emotion": "^10.0.32",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
@@ -45,6 +51,6 @@
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7",
-    "vercel": "^19.1.2"
+    "vercel": "latest"
   }
 }

@@ -1,5 +1,6 @@
 const path = require('path')
 const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
 const webpackConfig = (config, options) => {
   const {
@@ -19,16 +20,6 @@ const webpackConfig = (config, options) => {
     })
   }
 
-  if (!process.env.BUNDLE_AWS_SDK) {
-    newConfig.externals = config.externals || [];
-    newConfig.externals.push({
-      "aws-sdk": "aws-sdk"
-    });
-  } else {
-    // eslint-disable-next-line
-    console.warn("Bundling aws-sdk. Only doing this in development mode");
-  }
-
   newConfig.resolve.alias.rosetta = dev ? 'rosetta/debug' : 'rosetta'
   newConfig.resolve.alias['~'] = path.resolve(__dirname, './src')
   return newConfig
@@ -37,12 +28,11 @@ const webpackConfig = (config, options) => {
 const config = {
   poweredByHeader: false,
   webpack: webpackConfig,
-  experimental: {
-    trailingSlash: false,
-  },
+  trailingSlash: false,
   pwa: {
-    dest: 'public'
+    dest: 'public',
+    runtimeCaching
   }
 }
 
-module.exports = withPWA(config)
+module.exports = process.env.NODE_ENV === 'development' ? config : withPWA(config)

@@ -1,10 +1,7 @@
-import commonConfig from './common'
+export default async () => {
+  const env = process.env.NODE_ENV
 
-const config = {
-  ...commonConfig,
-  MY_SERVER_SECRET: 'MY_SERVER_SECRET',
+  return {
+    env,
+  }
 }
-
-export type ServerConfig = typeof config
-
-export default config

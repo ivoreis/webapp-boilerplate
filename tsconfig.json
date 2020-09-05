@@ -33,6 +33,8 @@
     "src/**/*.tsx",
     "next.config.js",
     "prettier.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
     ".eslintrc.js",
     "jest.config.js",
     "setupTests.ts"
