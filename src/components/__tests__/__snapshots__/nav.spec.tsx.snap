@@ -51,16 +51,11 @@ exports[`renders with correct styles 1`] = `
     </li>
     <li>
       <a
-        href="https://zeit.co/now"
+        href="/example"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        ZEIT
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://github.com/zeit/next.js"
-      >
-        GitHub
+        Example
       </a>
     </li>
   </ul>
