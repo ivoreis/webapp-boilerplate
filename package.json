@@ -9,7 +9,6 @@
     "test": "jest",
     "type-check": "tsc --noEmit",
     "vercel": "vercel",
-    "deploy": "serverless",
     "docker:build": "docker-compose build --build-arg GITHUB_TOKEN=$GITHUB_TOKEN web",
     "docker:start": "docker-compose run --publish 3000:3000 web"
   },
@@ -27,7 +26,6 @@
     "use-effect-reducer": "^0.6.1"
   },
   "devDependencies": {
-    "serverless": "^1.75.1",
     "jest-emotion": "^10.0.32",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
