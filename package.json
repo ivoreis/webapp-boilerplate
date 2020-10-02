@@ -16,7 +16,7 @@
     "node": "12.18.1"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.28",
+    "@emotion/core": "^10.0.35",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.5.3",
     "next-pwa": "^3.0.3",
