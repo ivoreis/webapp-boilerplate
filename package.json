@@ -29,7 +29,7 @@
     "use-effect-reducer": "^0.7.0"
   },
   "devDependencies": {
-    "webpack": "^5.3.0",
+    "webpack": "^5.3.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.7",
     "@types/node": "^14.0.23",
