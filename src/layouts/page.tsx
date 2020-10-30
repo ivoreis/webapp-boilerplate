@@ -9,14 +9,15 @@ export interface PageProps {
 }
 
 const Page: NextPage<PageProps> = (props) => {
-  const { children, title, className } = props
+  const { children, title } = props
+
   return (
-    <div className={className}>
+    <div className="min-h-screen bg-white">
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
+
       {children}
     </div>
   )

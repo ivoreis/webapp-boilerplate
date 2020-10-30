@@ -1,4 +1,6 @@
 // Default tailwind config - https://tailwindcss.com/docs/configuration/
+const tailwindcssui = require('@tailwindcss/ui')
+
 module.exports = {
   purge: [
     './src/**/*.tsx',
@@ -8,7 +10,6 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   theme: {
-    colors: {},
     textColor: {
       primary: 'var(--color-text-primary)',
       secondary: 'var(--color-text-secondary)',
@@ -30,13 +31,10 @@ module.exports = {
     fontWeights: {
       normal: 'var(--font-weight-normal)',
       display: 'var(--font-weight-display)',
-      btn: 'var(--font-weight-btn)',
-    },
-    borderRadius: {
-      none: '0',
-      btn: 'var(--rounded-btn)',
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    tailwindcssui
+  ]
 };

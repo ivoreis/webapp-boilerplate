@@ -30,6 +30,7 @@ class MyDocument extends Document {
             href="/images/icons/icon-192x192.png"
           />
           <meta name="theme-color" content="#317EFB" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
