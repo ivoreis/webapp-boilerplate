@@ -14,13 +14,16 @@ const buttonClasses = [
   'py-3',
   'md:py-4',
   'xl:py-3',
-  'bg-primary',
+  'bg-default',
   'md:text-lg',
-  'xl:text-base',
   'text-primary',
   'font-semibold',
   'leading-tight',
   'shadow-md',
+  'border',
+  'transition',
+  'duration-150',
+  'ease-in-out',
 ]
 
 const Home: NextPage<I18nBaseProps> = () => {
@@ -32,7 +35,7 @@ const Home: NextPage<I18nBaseProps> = () => {
       <div className="py-10">
         <header>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold leading-tight text-gray-900">
+            <h1 className="text-3xl font-bold leading-tight text-default transition duration-150 ease-in-out">
               Dashboard
             </h1>
           </div>
@@ -40,7 +43,7 @@ const Home: NextPage<I18nBaseProps> = () => {
         <main>
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div className="p-4">
-              <h1 className="title">
+              <h1 className="title text-default transition duration-150 ease-in-out">
                 {i18n.t('intro.welcome', { username: state?.profile?.name })}
                 {state.count}
               </h1>

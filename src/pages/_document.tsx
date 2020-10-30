@@ -1,6 +1,21 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+import { type } from 'os'
+import theme from '../theme'
+
+const toCss = (json: Record<string, any>) =>
+  Object.keys(json)
+    .map((selector) => {
+      const definition = json[selector]
+      const rules = Object.keys(definition)
+      const result = rules
+        .map((rule) => `${rule}:${definition[rule]}`)
+        .join(';')
+      return `${selector}{${result}}`
+    })
+    .join('\n')
+
 class MyDocument extends Document {
   render() {
     return (
@@ -31,8 +46,20 @@ class MyDocument extends Document {
           />
           <meta name="theme-color" content="#317EFB" />
           <link rel="icon" href="/favicon.ico" />
+          <style dangerouslySetInnerHTML={{ __html: toCss(theme) }} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              if(
+                localStorage.getItem("color-mode") === "dark" || 
+                (window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("color-mode"))
+              ) { 
+                document.documentElement.setAttribute("color-mode", "dark");
+              }`,
+            }}
+          />
         </Head>
-        <body>
+        <body className="bg-default transition duration-150 ease-in-out">
           <Main />
           <NextScript />
         </body>

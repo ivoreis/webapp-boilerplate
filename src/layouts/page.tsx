@@ -10,9 +10,8 @@ export interface PageProps {
 
 const Page: NextPage<PageProps> = (props) => {
   const { children, title } = props
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Head>
         <title>{title}</title>
       </Head>

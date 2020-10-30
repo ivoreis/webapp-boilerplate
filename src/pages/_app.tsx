@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -10,22 +10,28 @@ import { I18nBaseProps } from '~/hooks/i18n/useI18n'
 import I18n from '~/hooks/i18n'
 import StateManager from '~/hooks/stateManager'
 
-import theme from '../theme'
 import '../tailwind.css'
+
+const useResolveAfter = (delay: number) => {
+  const [shouldResolve, setShouldResolve] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      setShouldResolve(true)
+    }, delay)
+  })
+  return shouldResolve
+}
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
-const toCss = (json: Record<string, any>) =>
-  Object.keys(json)
-    .map((selector) => {
-      const definition = json[selector]
-      const rules = Object.keys(definition)
-      const result = rules
-        .map((rule) => `${rule}:${definition[rule]}`)
-        .join(';')
-      return `${selector}{${result}}`
-    })
-    .join('\n')
+const Loader = () => (
+  <main className="h-screen flex items-center bg-default">
+    <div className="w-full text-center text-default">
+      <Grid size={300} />
+      <p>Loading...</p>
+    </div>
+  </main>
+)
 
 const CustomApp = (
   props: AppProps & {
@@ -34,6 +40,9 @@ const CustomApp = (
     profile: Record<string, string>
   },
 ) => {
+  const [shouldDisplayLoader, setShouldDisplayLoader] = useState(true)
+  const resolve = useResolveAfter(500)
+
   const { Component, pageProps } = props
   const router = useRouter()
 
@@ -47,15 +56,18 @@ const CustomApp = (
   )
   const { data: language } = useSWR(`/api/locale/${router.locale}`, fetcher)
 
-  if (configError || profilError) return <div>failed to load</div>
-  if (!config || !profile || !language)
-    return (
-      <main className="h-screen flex items-center">
-        <div className="w-full text-center">
-          <Grid size={300} />
-        </div>
-      </main>
-    )
+  useEffect(() => {
+    if (!config || !profile || !language || !resolve) {
+      setShouldDisplayLoader(true)
+    } else {
+      setShouldDisplayLoader(false)
+    }
+  })
+
+  if (configError || profilError) return <Loader />
+  if (shouldDisplayLoader) {
+    return <Loader />
+  }
 
   return (
     <StateManager initialState={{ config, profile, ...pageProps.initialState }}>
@@ -66,7 +78,6 @@ const CustomApp = (
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
-            <style>{toCss(theme)}</style>
           </Head>
           <Component {...pageProps} />
         </>

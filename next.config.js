@@ -33,6 +33,9 @@ const config = {
     locales: ['en', 'de'],
     defaultLocale: 'en'
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  },
   pwa: {
     dest: 'public',
     runtimeCaching
