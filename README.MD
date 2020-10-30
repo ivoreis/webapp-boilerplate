@@ -7,7 +7,6 @@ Example NextJS app containing:
 - Typescript (https://www.typescriptlang.org/)
 - NextJS (https://nextjs.org/docs)
 - React (https://react.com/)
-- Emotion CSS (https://emotion.sh/docs/introduction)
 - Tailwind CSS (https://tailwindcss.com/)
 - Rosetta (i18n) (https://github.com/lukeed/rosetta)
 - Dockerised app (https://www.docker.com/)

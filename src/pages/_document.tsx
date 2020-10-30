@@ -1,18 +1,7 @@
 import React from 'react'
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
-
   render() {
     return (
       <Html lang="en">
@@ -21,7 +10,7 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="description" content="webapp boilerplate" />
-          <meta name="keywords" content="pwd,nextjs,reactjs,emotion" />
+          <meta name="keywords" content="pwd,nextjs,reactjs" />
           <link rel="manifest" href="/manifest.json" />
           <link
             href="/images/icons/icon-72x72.png"

@@ -23,8 +23,6 @@ export interface I18nWrapperProps {
 }
 
 export const defaultLanguage = 'en'
-export const languages = ['de', 'en']
-export const contentLanguageMap = { de: 'de-DE', en: 'en-US' }
 
 export const I18nContext = createContext({} as I18nWrapperProps)
 

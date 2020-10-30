@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import { NextPage } from 'next'
 
 const About: NextPage = () => {

@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import { NextPage } from 'next'
 import useStateManager from '~/hooks/stateManager/useStateManager'
 

@@ -1,32 +1,30 @@
 import React from 'react'
-import App, { AppProps, AppContext } from 'next/app'
+import { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
+import useSWR from 'swr'
 
-import { NextPageContext } from 'next'
-import { getLanguageProps, I18nBaseProps } from '~/hooks/i18n/useI18n'
+import { I18nBaseProps } from '~/hooks/i18n/useI18n'
 import I18n from '~/hooks/i18n'
 import StateManager from '~/hooks/stateManager'
 
+import theme from '../theme'
 import '../tailwind.css'
 
-const getBaseUrl = (ctx: NextPageContext) => {
-  const host =
-    ctx.req?.headers['x-env-app-host'] || ctx.req?.headers.host || null
-  const protocol = ctx.req?.headers.protocol || 'https'
-  return host && protocol
-    ? `${host.includes('localhost') ? 'http' : protocol}://${host}`
-    : ''
-}
-const fetchJson = (appContext: AppContext) => async (url: string) => {
-  try {
-    const apiResponse = await fetch(`${getBaseUrl(appContext.ctx)}${url}`)
-    return apiResponse.json()
-  } catch (error) {
-    console.info(`failed to load`, url, error.message)
-    return {}
-  }
-}
+const fetcher = (url: string) => fetch(url).then((r) => r.json())
+
+const toCss = (json: Record<string, any>) =>
+  Object.keys(json)
+    .map((selector) => {
+      const definition = json[selector]
+      const rules = Object.keys(definition)
+      const result = rules
+        .map((rule) => `${rule}:${definition[rule]}`)
+        .join(';')
+      return `${selector}{${result}}`
+    })
+    .join('\n')
 
 const CustomApp = (
   props: AppProps & {
@@ -35,34 +33,38 @@ const CustomApp = (
     profile: Record<string, string>
   },
 ) => {
-  const { Component, pageProps, profile, languageProps, config } = props
+  const { Component, pageProps } = props
+  const router = useRouter()
+
+  const { data: config, error: configError } = useSWR(
+    '/api/config/client',
+    fetcher,
+  )
+  const { data: profile, error: profilError } = useSWR(
+    '/api/profile/me',
+    fetcher,
+  )
+  const { data: language } = useSWR(`/api/locale/${router.locale}`, fetcher)
+
+  if (configError || profilError) return <div>failed to load</div>
+  if (!config || !profile || !language) return <div>loading...</div>
 
   return (
     <StateManager initialState={{ config, profile, ...pageProps.initialState }}>
-      <I18n langDict={languageProps.langDict} locale={languageProps.locale}>
+      <I18n langDict={language.langDict} locale={language.locale}>
         <>
           <Head>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
+            <style>{toCss(theme)}</style>
           </Head>
           <Component {...pageProps} />
         </>
       </I18n>
     </StateManager>
   )
-}
-
-CustomApp.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext)
-  const getResource = fetchJson(appContext)
-
-  const languageProps = await getLanguageProps(appContext)
-  const config = await getResource('/api/config/client')
-  const profile = await getResource('/api/profile/me')
-
-  return { ...appProps, languageProps, config, profile }
 }
 
 export default CustomApp

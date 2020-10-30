@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 
 const Blog: NextPage<{ slug: string }> = (props) => {

@@ -29,6 +29,10 @@ const config = {
   poweredByHeader: false,
   webpack: webpackConfig,
   trailingSlash: false,
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en'
+  },
   pwa: {
     dest: 'public',
     runtimeCaching
