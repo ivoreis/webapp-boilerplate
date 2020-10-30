@@ -13,23 +13,23 @@
     "docker:start": "docker-compose run --publish 3000:3000 web"
   },
   "engines": {
-    "node": "12.18.1"
+    "node": "12.18.1",
+    "npm": ">=7.0.0"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "clsx": "^1.1.1",
     "isomorphic-unfetch": "^3.1.0",
-    "next": "^9.5.5",
+    "next": "^10.0.0",
     "next-pwa": "^3.1.5",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-test-renderer": "^16.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
     "rosetta": "^1.1.0",
     "tailwindcss": "^1.9.6",
     "use-effect-reducer": "^0.7.0"
   },
   "devDependencies": {
-    "webpack": "^5.3.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.7",
     "@types/node": "^14.0.23",
@@ -52,6 +52,7 @@
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.5",
     "typescript": "^4.0.3",
-    "vercel": "latest"
+    "vercel": "latest",
+    "webpack": "^5.3.0"
   }
 }
