@@ -1,20 +1,24 @@
 import type { NextApiHandler } from 'next'
 
-const handler: NextApiHandler = async (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  const { lang = 'en' } = req.query
-
+export const getLocaleConfig = async (lang: string) => {
   try {
-    res.status(200).json({
-      locale: lang as string,
+    return Promise.resolve({
+      locale: lang,
       langDict: (await import(`~/locales/${lang}`)).default,
     })
   } catch (error) {
-    res.status(200).json({
+    return Promise.resolve({
       locale: 'en',
       langDict: (await import(`~/locales/en`)).default,
     })
   }
+}
+
+const handler: NextApiHandler = async (req, res) => {
+  res.setHeader('Content-Type', 'application/json')
+  const { lang = 'en' } = req.query
+  const localeConfig = await getLocaleConfig(lang as string)
+  res.status(200).json(localeConfig)
 }
 
 export default handler
