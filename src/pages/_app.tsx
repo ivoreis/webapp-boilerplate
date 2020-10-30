@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import fetch from 'isomorphic-unfetch'
 import useSWR from 'swr'
+import Grid from '~/components/spinners/grid'
 
 import { I18nBaseProps } from '~/hooks/i18n/useI18n'
 import I18n from '~/hooks/i18n'
@@ -47,7 +48,14 @@ const CustomApp = (
   const { data: language } = useSWR(`/api/locale/${router.locale}`, fetcher)
 
   if (configError || profilError) return <div>failed to load</div>
-  if (!config || !profile || !language) return <div>loading...</div>
+  if (!config || !profile || !language)
+    return (
+      <main className="h-screen flex items-center">
+        <div className="w-full text-center">
+          <Grid size={300} />
+        </div>
+      </main>
+    )
 
   return (
     <StateManager initialState={{ config, profile, ...pageProps.initialState }}>
