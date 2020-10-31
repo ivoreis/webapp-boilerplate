@@ -31,6 +31,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/no-danger': 'off',
+    'react/require-default-props': 'off',
+    'no-nested-ternary': 'off',
     'import/no-unresolved': [
       2,
       {

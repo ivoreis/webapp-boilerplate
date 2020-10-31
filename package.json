@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production next start",
     "test": "jest",
     "type-check": "tsc --noEmit",
     "vercel": "vercel",
