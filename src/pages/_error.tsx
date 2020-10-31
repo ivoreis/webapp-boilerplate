@@ -5,9 +5,13 @@ const Error: NextPage<{ statusCode?: number; error?: Error | null }> = ({
   error,
 }) => {
   return (
-    <p className="text-default">
-      Error - {statusCode} / Error: {JSON.stringify(error)}
-    </p>
+    <main className="h-screen flex items-center bg-default transition duration-150 ease-in-out">
+      <div className="w-full text-center text-default">
+        <p className="text-default text-6xl">
+          Error - {statusCode} / Error: {JSON.stringify(error)}
+        </p>
+      </div>
+    </main>
   )
 }
 

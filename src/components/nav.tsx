@@ -74,7 +74,7 @@ const Nav: FunctionComponent = () => {
             <div className="hidden sm:-my-px sm:ml-6 space-x-8 sm:flex">
               {navLinks.map((l) => (
                 <Link href={l.href} shallow={false} key={l.key}>
-                  <a className="inline-flex items-center px-1 pt-1 border-opacity-0 text-sm font-medium leading-5 text-default focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
+                  <a className="inline-flex items-center px-1 pt-1 border-opacity-0 text-sm font-medium leading-5 text-default">
                     {l.label}
                   </a>
                 </Link>
@@ -84,15 +84,12 @@ const Nav: FunctionComponent = () => {
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             {colorMode === 'light' && (
               <button
-                className="p-1 border-2 border-opacity-0 text-default rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition duration-150 ease-in-out"
+                className="p-1 border-2 border-opacity-0 text-default rounded-full"
                 aria-label="Dark mode"
                 type="button"
                 onClick={toggleDarkMode}
               >
-                <svg
-                  aria-hidden="true"
-                  className="w-7 h-7 transition duration-150 ease-in-out"
-                >
+                <svg aria-hidden="true" className="w-7 h-7">
                   <title>Dark Mode</title>
                   <use href="#moon" />
                 </svg>
@@ -101,15 +98,12 @@ const Nav: FunctionComponent = () => {
 
             {colorMode === 'dark' && (
               <button
-                className="p-1 border-2 border-opacity-0 text-default rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition duration-150 ease-in-out"
+                className="p-1 border-2 border-opacity-0 text-default rounded-full"
                 aria-label="Light mode"
                 type="button"
                 onClick={toggleDarkMode}
               >
-                <svg
-                  aria-hidden="true"
-                  className="w-7 h-7 transition duration-150 ease-in-out"
-                >
+                <svg aria-hidden="true" className="w-7 h-7">
                   <title>Light Mode</title>
                   <use href="#sun" />
                 </svg>
@@ -119,7 +113,7 @@ const Nav: FunctionComponent = () => {
             <div className="ml-3 relative">
               <div>
                 <button
-                  className="flex text-sm border-2 border-opacity-0 rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out"
+                  className="flex text-sm border-2 border-opacity-0 rounded-full"
                   id="user-menu"
                   aria-label="User menu"
                   aria-haspopup="true"
@@ -147,12 +141,12 @@ const Nav: FunctionComponent = () => {
                 {(ref) => (
                   <div
                     ref={ref}
-                    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lgbg-default border"
+                    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-default border"
                   >
-                    <div className="py-1 rounded-md bg-white shadow-xs">
+                    <div className="py-1 rounded-md bg-default shadow-xs">
                       {profileLinks.map((l) => (
                         <Link href={l.href} shallow={false} key={l.key}>
-                          <a className="block px-4 py-2 text-sm leading-5 text-default hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                          <a className="block px-4 py-2 text-sm leading-5 text-default hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
                             {l.label}
                           </a>
                         </Link>
@@ -166,7 +160,7 @@ const Nav: FunctionComponent = () => {
 
           <div className="-mr-2 flex items-center sm:hidden">
             <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-default hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+              className="inline-flex items-center justify-center p-2 rounded-md text-default"
               type="button"
               aria-label="Toggle mobile nav"
               onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
@@ -215,7 +209,7 @@ const Nav: FunctionComponent = () => {
         <div className="pt-2 pb-3 space-y-1">
           {navLinks.map((l) => (
             <Link href={l.href} shallow={false} key={l.key}>
-              <a className="block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-default font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out">
+              <a className="block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-default font-medium text-indigo-700 bg-indigo-50">
                 {l.label}
               </a>
             </Link>
@@ -233,7 +227,7 @@ const Nav: FunctionComponent = () => {
               />
             </div>
             <div>
-              <div className="text-default font-medium leading-6 text-gray-800 transition duration-150 ease-in-out">
+              <div className="text-default font-medium leading-6 text-gray-800">
                 Tom Cook
               </div>
               <div className="text-sm font-medium leading-5 text-gray-500">
@@ -251,7 +245,7 @@ const Nav: FunctionComponent = () => {
               <Link href={l.href} shallow={false} key={l.key}>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-default font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
+                  className="block px-4 py-2 text-default font-medium text-gray-500"
                   role="menuitem"
                 >
                   {l.label}

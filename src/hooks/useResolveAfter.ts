@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const useResolveAfter = (delay: number) => {
+  const timeout = useRef<ReturnType<typeof setTimeout>>()
   const [shouldResolve, setShouldResolve] = useState(false)
+
   useEffect(() => {
-    const id = setTimeout(() => {
+    timeout.current = setTimeout(() => {
       setShouldResolve(true)
     }, delay)
 
     return () => {
-      clearTimeout(id)
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
     }
   })
   return shouldResolve

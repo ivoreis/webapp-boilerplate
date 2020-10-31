@@ -10,30 +10,28 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   theme: {
-    textColor: {
-      primary: 'var(--color-text-primary)',
-      secondary: 'var(--color-text-secondary)',
-      default: 'var(--color-text-default)',
-      'default-soft': 'var(--color-text-default-soft)',
-      inverse: 'var(--color-text-inverse)',
-      'inverse-soft': 'var(--color-text-inverse-soft)',
-    },
-    backgroundColor: {
-      primary: 'var(--color-bg-primary)',
-      secondary: 'var(--color-bg-secondary)',
-      default: 'var(--color-bg-default)',
-      inverse: 'var(--color-bg-inverse)',
-    },
-    fontFamily: {
-      display: 'var(--font-display)',
-      body: 'var(--font-body)',
-    },
-    fontWeights: {
-      normal: 'var(--font-weight-normal)',
-      display: 'var(--font-weight-display)',
+    extend: {
+      colors: {
+        text: 'var(--color-text)',
+        background: 'var(--color-background)',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        muted: 'var(--color-muted)',
+        highlight: 'var(--color-highlight)',
+        accent: 'var(--color-accent)',
+        gray: 'var(--color-gray)',
+      },
+      textColor: {
+        default: 'var(--color-text)'
+      },
+      backgroundColor: {
+        default: 'var(--color-background)',
+      },
+      borderColor: {
+        default: 'var(--color-text)'
+      }
     },
   },
-  variants: {},
   plugins: [
     tailwindcssui
   ]

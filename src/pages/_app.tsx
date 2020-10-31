@@ -59,7 +59,7 @@ const BaseApp = (props: BaseAppProps) => {
 const CSRApp = (props: BaseAppProps) => {
   const [shouldDisplayLoader, setShouldDisplayLoader] = useState(true)
   // Add artificial delay to ensure a consistent splash page display time
-  const resolve = useResolveAfter(500)
+  const resolve = useResolveAfter(150)
   const router = useRouter()
 
   const { data: config, error: configError } = useSWR(

@@ -10,7 +10,7 @@ const handler: NextApiHandler = async (_req, res) => {
   res.status(200).json({
     status,
     message: 'Healthy',
-    config,
+    env: config.env,
   })
 }
 
