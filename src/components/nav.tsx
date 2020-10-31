@@ -168,6 +168,7 @@ const Nav: FunctionComponent = () => {
             <button
               className="inline-flex items-center justify-center p-2 rounded-md text-default hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
               type="button"
+              aria-label="Toggle mobile nav"
               onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
             >
               <svg

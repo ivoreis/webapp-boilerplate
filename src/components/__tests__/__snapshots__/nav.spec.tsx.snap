@@ -192,6 +192,7 @@ exports[`renders with correct styles 1`] = `
         className="-mr-2 flex items-center sm:hidden"
       >
         <button
+          aria-label="Toggle mobile nav"
           className="inline-flex items-center justify-center p-2 rounded-md text-default hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
           onClick={[Function]}
           type="button"
